@@ -60,7 +60,7 @@ docker run --name web-server -p 8080:80 -d --rm my-nginx
 #### 3-2 ディレクトリ・ファイルを共有する
 
 ```
-docker run --name web-server -p 8080:80 -d -v $(pwd)/static-html-directory:/usr/share/nginx/html nginx
+docker run --name web-server -p 8080:80 -d -v $(pwd)/static-html-directory:/usr/share/nginx/html my-nginx
 ```
 
 カレントディレクトリの `static-html-directory` ディレクトリが
