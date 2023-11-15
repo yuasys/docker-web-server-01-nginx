@@ -7,7 +7,7 @@
 - NGINXの開発環境での学習用を想定しています
 
 ## 使い方
-### ダウンロード
+### １．ダウンロード
 ```
 git clone https://github.com/yuasys/docker-web-server-01-nginx.git
 ```
@@ -17,7 +17,20 @@ git clone https://github.com/yuasys/docker-web-server-01-nginx.git
 cd docker-web-server-01-nginx
 ```
 
-### 起動
+## ２．イメージを作成
+```
+docker build -t my-nginx .
+```
+
+オプションの解説  
+
+> -t イメージ名:タグ をつける  
+    ここではイメージ名はmy-nginx  
+    タグ名はなし（なしの場合、デフォルトでlatestとなる）  
+.  DockerFileの相対パス指定  
+    ここではカレントディレクトリ内を指定している
+
+### ３．起動
 ```
 docker run --name web-server -p 8080:80 -d --rm my-nginx
 ```
@@ -25,10 +38,10 @@ docker run --name web-server -p 8080:80 -d --rm my-nginx
 起動後、以下のURLにアクセスして動作を確認できます。  
 http://localhost:8080
 
-※注意 VPSなどクラウド上のDocker環境で開発している場合はlocalhostの部分を適宜読み替えてください  
+※注意 VPSなどクラウド上のDocker環境で開発している場合はlocalhostの部分をVPSのurlまたはグローバルアドレスに適宜読み替えてください  
       例：http://xxx.xxxxx.xxx:8080
 
-### 状態確認
+### ４．状態確認
 ```
 docker ps
 ```
