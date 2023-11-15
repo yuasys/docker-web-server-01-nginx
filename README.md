@@ -17,7 +17,7 @@ git clone https://github.com/yuasys/docker-web-server-01-nginx.git
 cd docker-web-server-01-nginx
 ```
 
-## ２．イメージを作成
+### ２．イメージを作成
 ```
 docker build -t my-nginx .
 ```
