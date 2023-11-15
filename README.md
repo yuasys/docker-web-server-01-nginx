@@ -21,17 +21,16 @@ cd docker-web-server-01-nginx
 ```
 docker run --name web-server -p 8080:80 -d --rm my-nginx
 ```
-※注意 dockerのバージョンが古い場合は`docker-compose up -d`（ハイフンを入れる）
 
 起動後、以下のURLにアクセスして動作を確認できます。  
-http://localhost:8081
+http://localhost:8080
 
 ※注意 VPSなどクラウド上のDocker環境で開発している場合はlocalhostの部分を適宜読み替えてください  
-      例：http://xxx.xxxxx.xxx:8081
+      例：http://xxx.xxxxx.xxx:8080
 
 ### 状態確認
 ```
-docker compose ps
+docker ps
 ```
 StateがUpになっていたらOKです。
 
