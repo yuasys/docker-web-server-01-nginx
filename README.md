@@ -1,6 +1,8 @@
 # docker-web-server-01-nginxリポジトリについて
 
-<b>このリポジトリの使い方</b>
+このリポジトリは[Udemy講座](https://www.udemy.com/course/web-app-development/learn/lecture/27725522#notes)に触発され、筆者独自の知見を加えて作成したものです。
+
+## このリポジトリの使い方
 
 1. 作業用のリポジトリに移動する
 
