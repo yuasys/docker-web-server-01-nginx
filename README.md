@@ -1,5 +1,32 @@
 # docker-web-server-01-nginxリポジトリについて
 
+<b>このリポジトリの使い方</b>
+
+1. 作業用のリポジトリに移動する
+
+```
+cd ~/work
+```
+
+2. lsコマンドで作業用ディレクトリ配下にdocker-web-server-01-nginxリポジトリ（ディレクトリ）があるか確認する
+
+```
+ls 
+```
+
+3. もし、docker-web-server-01-nginxリポジトリ（ディレクトリ）があったら「５．」に進む
+
+```
+# もし、docker-web-server-01-nginxリポジトリ（ディレクトリ）がなかったら下記コマンドを実行
+git clone https://github.com/yuasys/docker-web-server-01-nginx.git 
+```
+
+4. docker-web-server-01-nginxリポジトリ（ディレクトリ）に移動
+
+```
+cd docker-web-server-01-nginx 
+```
+5. 必要に応じて、下記の作業を行う
 
 ## 概要
 - これはDockerを利用したローカル開発用のWebサーバーです
