@@ -55,12 +55,6 @@ nob@v133-18-242-166:~/work$ tree
 ```
 
 
-3. もし、docker-web-server-01-nginxリポジトリ（ディレクトリ）があったら「５．」に進む
-
-```
-# もし、docker-web-server-01-nginxリポジトリ（ディレクトリ）がなかったら下記コマンドを実行
-git clone https://github.com/yuasys/docker-web-server-01-nginx.git 
-```
 
 4. docker-web-server-01-nginxリポジトリ（ディレクトリ）に移動
 
@@ -69,7 +63,6 @@ cd docker-web-server-01-nginx
 ```
 5. 必要に応じて、下記の作業を行う
 
-## 概要
 - これはDockerを利用したローカル開発用のWebサーバーです
 - WebサーバーにNGINXが利用されています
 - 静的サイト（HTML/CSS/JavaScritp）開発に適しています
