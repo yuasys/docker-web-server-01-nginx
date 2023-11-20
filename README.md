@@ -38,7 +38,21 @@ docker-web-server-01-nginx
 
 ##### ２−２−１． git cloneコマンドでGitHubからダウンロードする【簡便な方法】
 
+```
+ob@v133-18-242-166:~/work$ git clone https://github.com/yuasys/docker-web-server-01-nginx.git
+```
+
 ##### ２−２−２． お手本を見ながら手作業で作成する方法
+
+次のように、ディレクトリやファイルを設置し、内容は[お手本](https://github.com/yuasys/docker-web-server-01-nginx.git)を見て編集する。
+
+```
+nob@v133-18-242-166:~/work$ tree
+.                              # 作業ディレウトリルート
+└── docker-web-server-01-nginx # リポジトリディレクトリ
+    ├── Dockerfile             # Dockerfile
+    └── static-html-directory  # ディレクトリ
+```
 
 
 3. もし、docker-web-server-01-nginxリポジトリ（ディレクトリ）があったら「５．」に進む
