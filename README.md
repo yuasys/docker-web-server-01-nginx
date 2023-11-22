@@ -99,7 +99,7 @@ f0afe4c2289d   my-nginx       "/docker-entrypoint.…"   6 days ago   Up 6 days 
     </script>
     ```
 
-
+※新規アプリを追加したindex.htmlは[ここ](https://github.com/yuasys/docker-web-server-01-nginx/blob/main/static-html-directory/index.html)を参照すること
 
 
 
