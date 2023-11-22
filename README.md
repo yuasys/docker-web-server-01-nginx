@@ -62,7 +62,7 @@ nob@v133-18-242-166:~/work$ tree
 
 #### ３−１．新規portで秒数変換アップリを作ってみる
 
-##### ３−１−１．準備（使えるポートを調べる）
+##### ３−１−１．準備（使えるポートとコンテナ名を調べる）
 
 ```
 # アプリを書く場所（ローカルリポジトリ）に移動する
@@ -77,7 +77,9 @@ e7c9abb564af   my-nginx       "/docker-entrypoint.…"   5 days ago   Up 5 days 
 f0afe4c2289d   my-nginx       "/docker-entrypoint.…"   6 days ago   Up 6 days   0.0.0.0:8080->80/tcp, :::8080->80/tcp   web-server
 ```
 
-調査結果：ホスト側では既に8080、8081、8082が使われていることがわかった。今回は、新たに8083ポートを使うこととする。
+調査結果わかったこと、及びこれからの方針策定：
+1. ホスト側では既に8080、8081、8082が使われていることがわかった。今回は、新たに<b>8083</b>ポートを使うこととする。  
+2. コンテナ名はデフォルトでシステムが名付けた名前を除くとweb-serverとweb-serが使われていたので、新たに<b>web-app03</b>を使うこととする。
 
 ##### ３−１−2．準備（HTMLでアプリを書く）
 1. アプリの設計：時間、分、秒を入力し、変換ボタンをクリック（タップ）すると入力値を秒に変換した値を表示する
@@ -101,7 +103,11 @@ f0afe4c2289d   my-nginx       "/docker-entrypoint.…"   6 days ago   Up 6 days 
 
 ※新規アプリを追加したindex.htmlは[ここ](https://github.com/yuasys/docker-web-server-01-nginx/blob/main/static-html-directory/index.html)を参照すること
 
+##### ３−１−3． 新規のコンテナを作成`create`と起動`run`を一気に実行する`run`コマンドの構成を考える
 
+1. docker run コマンドを使う：`docker run`
+2. コンテナ名は web-app03 とする：`docker run --name web-app03`
+3. Dockerfileはカレントディレクトリにあるものを使う
 
 
 ---
