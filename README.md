@@ -54,7 +54,57 @@ nob@v133-18-242-166:~/work$ tree
     └── static-html-directory  # ディレクトリ
 ```
 
+### 3. Docker コンテナのステータスを理解する
 
+![コンテナのステータス](https://hackmd.io/_uploads/BJXCtjqEa.jpg)
+
+[出典元（Udemy教材）](https://www.udemy.com/course/web-app-development/learn/lecture/27725350#overview)の一部を転用させていただいた画像です。
+
+#### ３−１．新規portで秒数変換アップリを作ってみる
+
+##### ３−１−１．準備（使えるポートを調べる）
+
+```
+# アプリを書く場所（ローカルリポジトリ）に移動する
+nob@v133-18-242-166:~$ cd ~/work/docker-web-server-01-nginx/
+
+# 既に使っている（た）ポートをpsコマンドで調べる
+nob@v133-18-242-166:~/work/docker-web-server-01-nginx$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED      STATUS      PORTS                                   NAMES
+80cf3aecf5c3   nginx:1.19.6   "/docker-entrypoint.…"   5 days ago   Up 5 days   0.0.0.0:8082->80/tcp, :::8082->80/tcp   docker-web-server-02-sandbox-nginx-1
+811fab0aa134   php:8.0-fpm    "docker-php-entrypoi…"   5 days ago   Up 5 days   9000/tcp                                docker-web-server-02-sandbox-php-fpm-1
+e7c9abb564af   my-nginx       "/docker-entrypoint.…"   5 days ago   Up 5 days   0.0.0.0:8081->80/tcp, :::8081->80/tcp   web-ser
+f0afe4c2289d   my-nginx       "/docker-entrypoint.…"   6 days ago   Up 6 days   0.0.0.0:8080->80/tcp, :::8080->80/tcp   web-server
+```
+
+調査結果：ホスト側では既に8080、8081、8082が使われていることがわかった。今回は、新たに8083ポートを使うこととする。
+
+##### ３−１−2．準備（HTMLでアプリを書く）
+1. アプリの設計：時間、分、秒を入力し、変換ボタンをクリック（タップ）すると入力値を秒に変換した値を表示する
+2. アプリの実装：VSCodeのCopilot拡張機能を使ってコードを取得して既存のindex.htmlファイルのbody部に追記する
+    - プロンプト：「HTML言語でhh:mm:ssを入力すると、秒に変換して表示するアプリを書いてください。」
+    - Copilot回答（一部）
+    ```
+        <input type="text" id="timeInput" placeholder="hh:mm:ss">
+    <button onclick="convertToSeconds()">変換</button>
+    <p id="result"></p>
+
+    <script>
+        function convertToSeconds() {
+            const timeInput = document.getElementById('timeInput').value;
+            const timeParts = timeInput.split(':');
+            const seconds = (+timeParts[0]) * 60 * 60 + (+timeParts[1]) * 60 + (+timeParts[2]);
+            document.getElementById('result').innerText = seconds + ' 秒';
+        }
+    </script>
+    ```
+
+
+
+
+
+
+---
 
 4. docker-web-server-01-nginxリポジトリ（ディレクトリ）に移動
 
