@@ -2,7 +2,9 @@
 
 このリポジトリは[Udemy講座](https://www.udemy.com/course/web-app-development/learn/lecture/27725522#notes)に触発され、筆者独自の知見を加えて作成したものです。
 
-## このリポジトリの使い方
+## このリポジトリはどのようにして作られたか
+
+
 
 ### 1.作業用ディレクトリ（のルート）に移動する
 
